@@ -102,8 +102,16 @@ int main(){
         if (isPressed(keys, KEYPAD_BITS::KEY_RIGHT)) position.x++; // if right is pressed increment x
         if (isPressed(keys, KEYPAD_BITS::KEY_A)) shouldSetBit = true; // if it should activate a cell
         if (isPressed(keys, KEYPAD_BITS::KEY_START)) shouldPlay = !shouldPlay; // if it play the game
-        if (isPressed(keys, KEYPAD_BITS::KEY_B)) {
-        }; // if b is pressed save current field, not implemented
+        if (isPressed(keys, KEYPAD_BITS::KEY_B)) { // if b is pressed save current field, not implemented
+        };
+        if (isPressed(keys, KEYPAD_BITS::KEY_SELECT)) { // Reset field
+            fieldBuf = std::bitset<240*160>(resetState);
+            field = std::bitset<240*160>(resetState);
+
+            for (int i = 0; i < 240*160; i++) {
+                buffer[i] = field[i] ? WHITE : BLACK;
+            }
+        }
 
         lastBit = bit;
         bit = position.x + position.y*240;
