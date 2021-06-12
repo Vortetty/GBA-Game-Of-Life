@@ -115,6 +115,7 @@ int main(){
         }
 
         if (shouldPlay){
+            buffer[position.x + position.y*240] = BLACK;
             for (int x = 0; x < 240; x++) {
                 for (int y = 0; y < 160; y++) {
                     cnt = 0;
@@ -165,7 +166,7 @@ int main(){
                         x = y = 500;
                         shouldPlay = false;
                         fieldBuf = std::bitset<240*160>(resetState);
-                        field = std::bitset<240*160>();
+                        field = std::bitset<240*160>(resetState);
 
                         for (int i = 0; i < 240*160; i++) {
                             buffer[i] = field[i] ? WHITE : BLACK;
