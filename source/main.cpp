@@ -165,7 +165,7 @@ int main(){
                         x = y = 500;
                         shouldPlay = false;
                         fieldBuf = std::bitset<240*160>(resetState);
-                        field = std::bitset<240*160>(resetState);
+                        field = std::bitset<240*160>();
 
                         for (int i = 0; i < 240*160; i++) {
                             buffer[i] = field[i] ? WHITE : BLACK;
