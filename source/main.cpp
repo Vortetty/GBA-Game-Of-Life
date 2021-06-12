@@ -20,8 +20,8 @@
 #include <vector>
 #include <fat.h>
 
-#define WHITE RGBToColor(0xffffff)
-#define BLACK RGBToColor(0x000000)
+#define WHITE 0xffff
+#define BLACK 0x0000
 #define CURSOR_ON RGBToColor(0x32cd32)
 #define CURSOR_OFF RGBToColor(0x228b22)
 
